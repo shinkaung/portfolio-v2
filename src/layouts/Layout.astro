@@ -1,0 +1,71 @@
+---
+import Navbar from '../components/Navbar';
+import ThemeWrapper from '../components/ThemeWrapper';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="min-h-screen transition-colors duration-200">
+      <ThemeWrapper client:load />
+      <slot />
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Base theme styles */
+  :root {
+    color-scheme: light;
+    --bg-primary: white;
+    --text-primary: #111827;
+  }
+
+  /* Dark theme */
+  :root.dark {
+    color-scheme: dark;
+    --bg-primary: #121212;
+    --text-primary: white;
+  }
+
+  /* Deep blue theme */
+  :root.deep-blue {
+    color-scheme: dark;
+    --bg-primary: #1a1b26;
+    --text-primary: #a9b1d6;
+  }
+
+  /* Apply theme styles */
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  .deep-blue {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+</style>

@@ -1,0 +1,154 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Online Ticket Booking System - Project Details">
+  <main class="max-w-4xl mx-auto px-4 py-20">
+    <div class="space-y-12">
+      <!-- Project Header -->
+      <div class="text-center">
+        <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          Online Ticket Booking System
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-400">
+          Web-based Ticket Booking Platform for Transportation Buses
+        </p>
+      </div>
+
+      <!-- Main Project Image -->
+      <div class="overflow-hidden rounded-xl shadow-lg bg-gray-100 dark:bg-gray-800">
+        <img 
+          src="/projects/search trip.png" 
+          alt="Online Ticket Booking Homepage" 
+          class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+
+      <!-- Feature Screenshots Grid -->
+      <div>
+        <h2 class="text-2xl font-bold mb-6">Key Features Showcase</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <div class="overflow-hidden rounded-lg shadow-md bg-gray-100 dark:bg-gray-800">
+              <img 
+                src="/projects/check availability.png" 
+                alt="Seat Availability Interface" 
+                class="w-full h-[300px] object-contain hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400 font-medium">Interactive Seat Selection System</p>
+          </div>
+          <div class="space-y-2">
+            <div class="overflow-hidden rounded-lg shadow-md bg-gray-100 dark:bg-gray-800">
+              <img 
+                src="/projects/select seat.png" 
+                alt="Booking Process" 
+                class="w-full h-[300px] object-contain hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400 font-medium">Seamless Booking Experience</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Overview -->
+      <div class="prose dark:prose-invert max-w-none">
+        <h2 class="text-2xl font-bold mb-4">Project Overview</h2>
+        <p class="text-gray-700 dark:text-gray-300">
+          The Online Ticket Booking System is a comprehensive web application designed to streamline the bus ticket booking process.
+        </p>
+      </div>
+
+      <!-- Development Role -->
+      <div class="prose dark:prose-invert max-w-none">
+        <h2 class="text-2xl font-bold mb-4">My Role</h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-3">As the Project Manager for this team project, I was responsible for:</p>
+        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+          <li class="flex items-center gap-2">
+            <span class="text-blue-500">★</span>
+            Team management and task delegation
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-blue-500">★</span>
+            Ensuring smooth collaboration between team members
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-blue-500">★</span>
+            Implementing the seat selection system
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-blue-500">★</span>
+            Developing seat and car availability checking features
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-blue-500">★</span>
+            Building the complete booking process
+          </li>
+        </ul>
+      </div>
+
+      <!-- Key Features -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold">Key Features</h2>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li class="flex items-center gap-2">
+              <span class="text-green-500">✓</span>
+              User authentication and account management
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-500">✓</span>
+              Real-time seat availability checking
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-500">✓</span>
+              Interactive seat selection interface
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-500">✓</span>
+              Express car availability and scheduling
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-green-500">✓</span>
+              Comprehensive admin dashboard
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold">Tech Stack</h2>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm">PHP</span>
+              <span class="text-gray-600 dark:text-gray-400">Backend Development</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-300 rounded-full text-sm">JavaScript</span>
+              <span class="text-gray-600 dark:text-gray-400">Interactive Features</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-full text-sm">CSS</span>
+              <span class="text-gray-600 dark:text-gray-400">Styling and Layout</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-300 rounded-full text-sm">HTML</span>
+              <span class="text-gray-600 dark:text-gray-400">Structure and Content</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  img {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style> 

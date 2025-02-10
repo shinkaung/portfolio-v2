@@ -1,0 +1,71 @@
+<footer class="w-full bg-white/90 dark:bg-[#121212]/90 backdrop-blur-sm border-t border-gray-200 dark:border-gray-800 mt-24">
+  <div class="max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      {/* Developer Info */}
+      <div class="flex items-center space-x-2">
+        <span class="text-gray-500 dark:text-gray-400 text-sm">DEVELOPED BY</span>
+        <span class="text-gray-900 dark:text-white font-medium">SHIN KAUNG PYAE SHAN</span>
+      </div>
+
+      {/* Built With Section */}
+      <div class="flex items-center space-x-3">
+        <span class="text-gray-500 dark:text-gray-400 text-sm">BUILT WITH</span>
+        <div class="flex items-center space-x-4">
+          {/* Astro */}
+          <a href="https://astro.build" target="_blank" rel="noopener noreferrer" 
+             class="w-9 h-9 rounded-full flex items-center justify-center border border-gray-200 dark:border-0 dark:bg-zinc-800">
+            <img 
+              loading="lazy"
+              class="w-5 h-5 dark:hidden" 
+              src="/assets/techicons/astro-icon-dark.png" 
+              alt="astro logo"
+            />
+            <img 
+              loading="lazy"
+              class="w-5 h-5 hidden dark:block" 
+              src="/assets/techicons/astro-icon-light-gradient.png" 
+              alt="astro logo"
+            />
+          </a>
+          {/* React */}
+          <a href="https://react.dev" target="_blank" rel="noopener noreferrer" 
+             class="w-9 h-9 rounded-full flex items-center justify-center border border-gray-200 dark:border-0 dark:bg-zinc-800">
+            <img 
+              loading="lazy"
+              class="w-5 h-5" 
+              src="/assets/techicons/React.png" 
+              alt="react logo"
+            />
+          </a>
+          {/* Tailwind */}
+          <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" 
+             class="w-9 h-9 rounded-full flex items-center justify-center border border-gray-200 dark:border-0 dark:bg-zinc-800">
+            <img 
+              loading="lazy"
+              class="w-5 h-5" 
+              src="/assets/techicons/Tailwind CSS.png" 
+              alt="tailwind logo"
+            />
+          </a>
+          {/* Vercel */}
+          <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" 
+             class="w-9 h-9 rounded-full flex items-center justify-center border border-gray-200 dark:border-0 dark:bg-zinc-800">
+            <img 
+              loading="lazy"
+              class="w-5 h-5" 
+              src="/assets/techicons/Vercel.png" 
+              alt="vercel logo"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Copyright */}
+    <div class="mt-4 text-center">
+      <p class="text-gray-500 dark:text-gray-400 text-sm">
+        © {new Date().getFullYear()} All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
