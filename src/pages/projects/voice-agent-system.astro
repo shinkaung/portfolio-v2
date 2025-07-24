@@ -1,0 +1,245 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Voice Agent System - Projects">
+  <main class="max-w-4xl mx-auto px-4 py-20">
+    {/* Project Header */}
+    <div class="text-center mb-16">
+      <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+        Voice Agent System
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        An intelligent restaurant reservation system with voice interactions and automated workflow management
+      </p>
+    </div>
+
+    {/* Tech Stack Pills */}
+    <div class="flex flex-wrap gap-3 justify-center mb-16">
+      <span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-full text-sm text-gray-700 dark:text-gray-300">VAPI</span>
+      <span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-full text-sm text-gray-700 dark:text-gray-300">n8n</span>
+      <span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-full text-sm text-gray-700 dark:text-gray-300">OpenAI</span>
+      <span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-full text-sm text-gray-700 dark:text-gray-300">ElevenLabs</span>
+      <span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-full text-sm text-gray-700 dark:text-gray-300">Twilio</span>
+      <span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-full text-sm text-gray-700 dark:text-gray-300">Custom Dashboard</span>
+    </div>
+
+    {/* Project Demo */}
+    <div class="aspect-video w-full rounded-xl overflow-hidden shadow-lg mb-16 bg-gray-100 dark:bg-gray-800">
+      <video 
+        id="demo-video"
+        class="w-full h-full object-cover"
+        controls
+        preload="metadata"
+        crossorigin="anonymous"
+      >
+        <source src="/projects/floorplan-demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      
+      {/* Fallback when video fails to load */}
+      <div id="video-fallback" class="hidden w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-xl">
+        <div class="text-center p-8">
+          <svg class="w-16 h-16 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 002 2z"></path>
+          </svg>
+          <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">Video Unavailable</h3>
+          <p class="text-gray-500 dark:text-gray-400 mb-4">The demo video could not be loaded. Please try refreshing the page or downloading the video.</p>
+          <div class="space-y-2">
+            <a href="/projects/floorplan-demo.mp4" 
+               target="_blank" 
+               class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              Download Video
+            </a>
+            <button 
+              onclick="retryVideo()"
+              class="block w-full mt-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+              Retry Loading
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function retryVideo() {
+        const video = document.getElementById('demo-video');
+        const fallback = document.getElementById('video-fallback');
+        
+        // Hide fallback and show video
+        fallback.classList.add('hidden');
+        video.style.display = 'block';
+        
+        // Reload the video
+        video.load();
+        
+        // Check if video loads successfully
+        video.addEventListener('loadeddata', function() {
+          console.log('Video loaded successfully');
+        });
+        
+        // Show fallback if video fails to load
+        video.addEventListener('error', function() {
+          console.log('Video failed to load');
+          video.style.display = 'none';
+          fallback.classList.remove('hidden');
+        });
+      }
+      
+      // Check video loading on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById('demo-video');
+        const fallback = document.getElementById('video-fallback');
+        
+        video.addEventListener('error', function() {
+          console.log('Video failed to load on page load');
+          video.style.display = 'none';
+          fallback.classList.remove('hidden');
+        });
+      });
+    </script>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+      {/* Overview Card */}
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+        <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Overview</h2>
+        <p class="text-gray-700 dark:text-gray-300">
+          A comprehensive restaurant reservation system that combines voice interaction, automated workflow management, and a unified dashboard. The system streamlines the reservation process through multiple channels including voice calls, walk-ins, and Calendly bookings.
+        </p>
+      </div>
+
+      {/* Voice Agent Card */}
+      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 shadow-lg">
+        <h2 class="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-400">Voice Agent</h2>
+        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-blue-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Natural conversation handling through VAPI
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-blue-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Smart table assignment based on priority
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-blue-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Special request handling & processing
+          </li>
+        </ul>
+      </div>
+
+      {/* Workflow Card */}
+      <div class="bg-gradient-to-br from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 rounded-xl p-6 shadow-lg">
+        <h2 class="text-2xl font-bold mb-4 text-green-600 dark:text-green-400">Workflow Automation</h2>
+        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Real-time availability checks
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Smart reminder system with follow-ups
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Automated booking management
+          </li>
+        </ul>
+      </div>
+
+      {/* Dashboard Card */}
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6 shadow-lg">
+        <h2 class="text-2xl font-bold mb-4 text-purple-600 dark:text-purple-400">Unified Dashboard</h2>
+        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-purple-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Centralized reservation management
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-purple-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Walk-in & Calendly integration
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-purple-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Real-time table management
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    {/* Technical Details */}
+    <div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-8 shadow-lg">
+      <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Technical Stack</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="space-y-3">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+              <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white">VAPI & OpenAI</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Natural language processing</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+              <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white">n8n</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Workflow automation</p>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+              <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white">ElevenLabs</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Voice synthesis</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center">
+              <svg class="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white">Twilio</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Telephony integration</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout> 
